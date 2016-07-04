@@ -19,8 +19,9 @@ import com.bean.EmpDetails;
 import com.bean.EmpLeave;
 import com.bean.EmpLogin;
 import com.bean.User_Roles;
-import com.calculation.CalLeaves;
-import com.calculation.CalPlannedLeaves;
+import com.services.calculation.CalLeaves;
+import com.services.calculation.CalPlannedLeaves;
+
 
 
 @Service("empDetailsService")
@@ -137,7 +138,7 @@ public class EmpDetailsServiceImpl implements EmpDetailsService {
 		EmpLeave eleave=new EmpLeave();
 		
 		CalLeaves cl=new CalLeaves();
-		int leaves = cl.calLeaves(leave.getStartDate(),leave.getEndDate());
+		int leaves = cl.LeavedaysCounter(leave.getStartDate(),leave.getEndDate());
 		String typeOfLeave=leave.getTypeOfLeave();
 		
 		if(typeOfLeave.equalsIgnoreCase("plannedLeaves"))
@@ -162,7 +163,7 @@ public class EmpDetailsServiceImpl implements EmpDetailsService {
 	public int calLeavesBetweenGivenDates(String start, String end) 
 	{
 		CalLeaves cl=new CalLeaves();
-		int leaves = cl.calLeaves(start, end);
+		int leaves = cl.LeavedaysCounter(start, end);
 		
 		return leaves;
 	}
