@@ -108,6 +108,7 @@ public class EmpDetailsServiceImpl implements EmpDetailsService {
 		t = s.beginTransaction();
 		
 		EmpLogin elogin=new EmpLogin();
+		
 		elogin.setEmpId(newObj.getEmpId());
 		elogin.setPassword("demo");
 		elogin.setEnabled(true);		

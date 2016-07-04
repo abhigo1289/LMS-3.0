@@ -10,7 +10,7 @@
 
 	<properties>
 		<jdk.version>1.7</jdk.version>
-		<spring.version>4.2.0.RELEASE</spring.version>
+		<spring.version>4.3.0.RELEASE</spring.version>
 		<spring.security.version>3.2.3.RELEASE</spring.security.version>
 		<jackson.library>2.5.3</jackson.library>
 		<jstl.version>1.2</jstl.version>
@@ -19,7 +19,7 @@
 		<slf4j.version>1.7.6</slf4j.version>
 		<hibernate.version>4.2.11.Final</hibernate.version>
 		<dbcp.version>1.4</dbcp.version>
-		<servletapi.version>3.1.0</servletapi.version>
+		
 	</properties>
 
 	<dependencies>
@@ -131,13 +131,13 @@
 			<artifactId>logback-classic</artifactId>
 			<version>${logback.version}</version>
 		</dependency>
+<!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>servlet-api</artifactId>
+    <version>3.0-alpha-1</version>
+</dependency>
 
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>${servletapi.version}</version>
-			<scope>provided</scope>
-		</dependency>
 		<!-- for JSON implicit conversion -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
