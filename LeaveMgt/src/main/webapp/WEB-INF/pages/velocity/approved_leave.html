@@ -1,0 +1,38 @@
+<div class="modal-header">
+	<h4 class="modal-title">
+		<center>Approved Leaves</center>
+	</h4>
+</div>
+<div class="modal-body">
+
+	<table class="table table-borderless  table-condensed">
+		<thead ng-class="{'header': true}">
+			<tr>
+				<th ng-click="onCol = 'typeOfLeave'">Type of Leave</th>
+				<th ng-click="onCol = 'startDate'">Start Date</th>
+				<th ng-click="onCol = 'endDate'">End Date</th>
+				<th>First Half</th>
+				<th>Second Half</th>
+				<th>Reason</th>
+				<th ng-click="onCol = 'status'">Status</th>
+				<th></th>
+			</tr>
+
+		</thead>
+		<tbody>
+			<tr ng-repeat="empLeave in empLeaves | orderBy : onCol" ng-class-even="'even'" ng-class-odd="'odd'">
+				<td ng-bind='empLeave.typeOfLeave'></td>
+				<td ng-bind='empLeave.startDate'></td>
+				<td ng-bind='empLeave.endDate'></td>
+				<td ng-bind='empLeave.firstHalf'></td>
+				<td ng-bind='empLeave.secondHalf'></td>
+				<td ng-bind='empLeave.reason'></td>
+				<td ng-bind='empLeave.status'></td>
+				<td><a ng-click="deleteEmpLeave(empLeave.startDate)">Delete</a></td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<br><br>
+	<button type="button" class="btn btn-warning">Cancel</button>
+</div>
